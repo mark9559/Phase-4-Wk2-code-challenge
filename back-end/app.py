@@ -1,11 +1,13 @@
 #!/usr/bin/env python3
 
 from flask import Flask, jsonify, request
+from flask_cors import CORS
 from flask_sqlalchemy import SQLAlchemy
 from models import db
 from flask_migrate import Migrate
 
 app = Flask(__name__)
+CORS(app)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///server.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
@@ -106,4 +108,5 @@ def create_restaurant_pizza():
     }), 201
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    #app.run(debug=True)
+    app.run(port=5555)
