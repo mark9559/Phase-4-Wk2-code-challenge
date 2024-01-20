@@ -43,7 +43,7 @@ def get_restaurant(restaurant_id):
             "address": restaurant.address,
             "pizzas": [
                 {"id": rp.pizza.id, "name": rp.pizza.name, "ingredients": rp.pizza.ingredients, "price": rp.price}
-                for rp in restaurant.restaurant_pizzas  # Update this line
+                for rp in restaurant.restaurant_pizzas
             ]
         }
         return jsonify(data)
