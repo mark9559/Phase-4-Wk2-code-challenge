@@ -1,0 +1,124 @@
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.header {
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
+  text-align: center;
+}
+
+/* Restaurant List Styles */
+.restaurant {
+  background-color: #fff;
+  margin: 10px 0;
+  padding: 15px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.restaurant h2 {
+  margin-bottom: 10px;
+}
+
+.restaurant a {
+  display: block;
+  padding: 10px;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  border-radius: 5px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.restaurant a:hover {
+  background-color: #555;
+}
+
+/* Restaurant Detail Styles */
+.restaurant-detail {
+  background-color: #fff;
+  margin: 20px 0;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.restaurant-detail h1 {
+  margin-bottom: 10px;
+}
+
+.restaurant-detail h2 {
+  margin-bottom: 10px;
+}
+
+.restaurant-detail ul {
+  list-style: none;
+  padding: 0;
+}
+
+.restaurant-detail li {
+  margin-bottom: 15px;
+}
+
+.restaurant-detail p {
+  margin: 0;
+}
+
+/* Pizza List Styles */
+.pizza {
+  background-color: #fff;
+  margin: 10px 0;
+  padding: 15px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.pizza h2 {
+  margin-bottom: 10px;
+}
+
+/* Create Restaurant Pizza Form Styles */
+.form {
+  background-color: #fff;
+  margin: 20px 0;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.form label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.form input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+}
+
+.form button {
+  padding: 10px;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.form button:hover {
+  background-color: #555;
+}
