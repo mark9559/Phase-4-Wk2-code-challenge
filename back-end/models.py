@@ -1,4 +1,5 @@
 # models.py
+
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy import CheckConstraint
 
@@ -24,7 +25,8 @@ class RestaurantPizza(db.Model):
     restaurant_id = db.Column(db.Integer, db.ForeignKey('restaurants.id'), nullable=False)
     pizza_id = db.Column(db.Integer, db.ForeignKey('pizzas.id'), nullable=False)
     restaurant = db.relationship('Restaurant', back_populates='restaurant_pizzas')
-    pizza = db.relationship('Pizza')  # Remove back_populates here
+    pizza = db.relationship('Pizza')
+
     # Add a CheckConstraint for the price column
     __table_args__ = (
         CheckConstraint('price >= 1 and price <= 30', name='check_price'),
