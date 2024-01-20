@@ -12,20 +12,25 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db.init_app(app)
 migrate = Migrate(app, db)
 
-# Import models after initializing db
+# Importing models after initializing db
 from models import Restaurant, Pizza, RestaurantPizza
+
+# Routes
 
 @app.route('/')
 def home():
     return ''
 
-# Routes
+# GET /restaurants
+
 @app.route('/restaurants', methods=['GET'])
 def get_restaurants():
     # implement logic to get restaurants
     restaurants = Restaurant.query.all()
     data = [{"id": restaurant.id, "name": restaurant.name, "address": restaurant.address} for restaurant in restaurants]
     return jsonify(data)
+
+# GET /restaurants/:restaurant_id
 
 @app.route('/restaurants/<int:restaurant_id>', methods=['GET'])
 def get_restaurant(restaurant_id):
@@ -37,13 +42,15 @@ def get_restaurant(restaurant_id):
             "name": restaurant.name,
             "address": restaurant.address,
             "pizzas": [
-                {"id": pizza.id, "name": pizza.name, "ingredients": pizza.ingredients}
-                for pizza in restaurant.pizzas
+                {"id": rp.pizza.id, "name": rp.pizza.name, "ingredients": rp.pizza.ingredients, "price": rp.price}
+                for rp in restaurant.restaurant_pizzas  # Update this line
             ]
         }
         return jsonify(data)
     else:
         return jsonify({"error": "Restaurant not found"}), 404
+
+# DELETE/restaurants/:restaurant_id
 
 @app.route('/restaurants/<int:restaurant_id>', methods=['DELETE'])
 def delete_restaurant(restaurant_id):
@@ -58,12 +65,16 @@ def delete_restaurant(restaurant_id):
     else:
         return jsonify({"error": "Restaurant not found"}), 404
 
+# GET /pizzas
+
 @app.route('/pizzas', methods=['GET'])
 def get_pizzas():
     # implement logic to get pizzas
     pizzas = Pizza.query.all()
     data = [{"id": pizza.id, "name": pizza.name, "ingredients": pizza.ingredients} for pizza in pizzas]
     return jsonify(data)
+
+# POST/restaurants_pizzas
 
 @app.route('/restaurant_pizzas', methods=['POST'])
 def create_restaurant_pizza():
