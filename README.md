@@ -154,29 +154,31 @@ If the `RestaurantPizza` is **not** created successfully, return the following J
 
 1. Clone the repository to any desired folder in your computer.
 2. Open the folder with Visual Studio Code or any editor of your choice.
-3. Navigate to the `superheroes` directory then cd into `code-challenge` folder.
-4. To download the dependencies for the frontend and backend, run:
+3. There are two folders in the root directory, the `back-end` folder and the `front-end` folder.
+4. To download the dependencies for the frontend run:
 
 ```sh
 npm install 
-pipenv install && pipenv shell
 ```
-There is some starter code in the `app/seed.py` file so that once you've
-generated the models, you'll be able to create data to test your application.
+5. To download the dependencies for the backend, run:
 
-You can run your Flask API on [`localhost:5555`](http://localhost:5555) by running:
+```sh
+pipenv install && pipenv shell 
+```
+
+You can run your Flask API on [`localhost:5555`](http://localhost:5555) by navigating to the `back-end` folder and run:
 
 ```sh
 python3 app.py
 ```
 
-You can run your React app on [`localhost:4000`](http://localhost:4000) by running:
+You can run your React app on [`localhost:4000`](http://localhost:4000) using a separate terminal by navigating to the `front-end` folder and run:
 
 ```sh
 npm start
 ```
 
-5. And your application is up and running successfully.
+6. And your application is up and running successfully.
 
 ## Known Bugs
 
