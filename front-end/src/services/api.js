@@ -1,5 +1,5 @@
 // api.js
-const baseUrl = "http://127.0.0.1:5555"; // Update with your Flask API URL
+const baseUrl = "http://127.0.0.1:5555"; //Flask API URL
 
 export const getRestaurants = async () => {
   const response = await fetch(`${baseUrl}/restaurants`);
