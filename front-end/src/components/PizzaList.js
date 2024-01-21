@@ -29,7 +29,6 @@ const PizzaList = () => {
             <h2>{pizza.name}</h2>
             <h3>Ingredients</h3>
             <p className='pizza-para'>{pizza.ingredients}</p>
-            {/* You can add more details as needed */}
           </div>
         </div>
       ))}
