@@ -27,8 +27,10 @@ const CreateRestaurantPizzaForm = () => {
   };
 
   return (
-    <div>
-      <h1>Create Restaurant Pizza</h1>
+    <div className="form-container">
+      <div className="form-header">
+        <h1>Create Restaurant Pizza</h1>
+      </div>
       <form onSubmit={handleSubmit}>
         <label>
           Price:

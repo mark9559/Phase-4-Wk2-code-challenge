@@ -6,7 +6,6 @@ import { getRestaurants } from '../services/api';
 const RestaurantList = () => {
   const [restaurants, setRestaurants] = useState([]);
 
- 
   useEffect(() => {
     const fetchRestaurants = async () => {
       try {
@@ -21,12 +20,12 @@ const RestaurantList = () => {
   }, []);
 
   return (
-    <div>
+    <div className="restaurant-list">
       <h1>Restaurants</h1>
       {restaurants.map((restaurant) => (
-        <div key={restaurant.id}>
-          <Link to={`/restaurants/${restaurant.id}`}>
-            <p>{restaurant.name}</p>
+        <div className="restaurant" key={restaurant.id}>
+          <Link to={`/restaurants/${restaurant.id}`} className="restaurant-link">
+            <h2>{restaurant.name}</h2>
           </Link>
         </div>
       ))}

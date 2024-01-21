@@ -21,18 +21,18 @@ const RestaurantDetail = () => {
   }
 
   return (
-    <div>
+    <div className="restaurant-detail">
       <h1>{restaurant.name}</h1>
-      <p>{restaurant.address}</p>
-      <h2>Pizzas</h2>
+      <p className="address">{restaurant.address}</p>
+      <h2>Available Pizzas</h2>
       {restaurant.pizzas.length === 0 ? (
         <p>No pizzas available</p>
       ) : (
-        <ul>
+        <ul className="pizza-list">
           {restaurant.pizzas.map((pizza) => (
             <li key={pizza.id}>
-              <p>{pizza.name}</p>
-              <p>{pizza.ingredients}</p>
+              <p className="pizza-name">{pizza.name}</p>
+              <p className="pizza-ingredients">{pizza.ingredients}</p>
             </li>
           ))}
         </ul>
